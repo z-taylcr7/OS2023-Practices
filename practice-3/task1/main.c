@@ -39,6 +39,12 @@ int main(int argc, char *argv[]) {
 	// write anything you like to the mmaped file
 
 	mmaped[0] = 'l';
+	mmaped[10] = '2';
+	mmaped[20] = '0';
+	mmaped[19] = '\n';
+	mmaped[4] = 's';
+	mmaped[5] = 'a';
+
 
 	if (msync(mmaped, sb.st_size, MS_SYNC) == -1) {
 		fprintf(stderr, "fail on msync %s\n", argv[1]);
